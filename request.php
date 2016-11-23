@@ -10,13 +10,13 @@
 	if(move_uploaded_file($_FILES["zip"]["tmp_name"], $target_file)) 
 		echo "<h2> success </h2>";
 	else echo "<h2> fail </h2>";
-	
+	$extract_dir = substr($target_file, strlen($target_dir), -4);
 	 $commands = array(
 		0 => "ls -a",
                 1 => "cd uploads",
-		2 => "rm -r ./extracted/*",
-                3 => "unzip $target_file -d /var/www/html/uploads/extracted/",
-		4 => "ls extracted", 
+		2 => "sudo mkdir './extracted/$extract_dir'",
+                3 => "sudo unzip '$target_file' -d '/var/www/html/uploads/extracted/$extract_dir'",
+		4 => "sudo ls 'extracted/$extract_dir' -a", 
 
          );
 
