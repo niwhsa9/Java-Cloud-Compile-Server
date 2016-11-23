@@ -10,10 +10,13 @@
 	if(move_uploaded_file($_FILES["zip"]["tmp_name"], $target_file)) 
 		echo "<h2> success </h2>";
 	else echo "<h2> fail </h2>";
+	
 	 $commands = array(
-                0 => "cd uploads",
-		1 => "rm -rf ./extracted/"
-                1 => "unzip $target_file -d /var/www/html/uploads/extracted/",
+		0 => "ls -a",
+                1 => "cd uploads",
+		2 => "rm -r ./extracted/*",
+                3 => "unzip $target_file -d /var/www/html/uploads/extracted/",
+		4 => "ls extracted", 
 
          );
 
@@ -24,6 +27,7 @@
 			echo "Running: $commands[$i]";
 			$res = shell_exec($commands[$i]);
 			echo "<p>$res</p>";
+			if($res == NULL) echo "<p>NULL</p>";
 		}
 	}
 ?>
