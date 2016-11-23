@@ -1,32 +1,16 @@
-<!DOCTYPE html> 
-<html>
+<!DOCTYPE html>
+<head>
+  <title>Authentication</title>
+</head>
 
-	<body>
-		<p>Updated 11/20/2016 at 6:24 pm PST.<b> STATUS:<span style="color:red">VUNERABLE</span></b></p>
-		<form enctype="multipart/form-data" method = "POST" action="request.php">
-		<label>Select Zip: <input type="file" id="zipUpload"  name="zip" /> </label>
-		<input type ="submit" value = "Upload File"/>
-		</form> 
-		
-		<p>DEBUG LOG:</p>
-		
-		<p><em>&lt Signed off &gt; Ashwin Gupta (ashwingupta2000@gmail.com)</em> </p>
-		<script src="https://code.jquery.com/jquery-3.1.1.js"> </script>
-		<script> 
-			/*
-			var filesInput = document.getElementById("zipUpload");
-			filesInput.addEventListener("change", function(event){	
-				var mFile = event.target.files[0];
-				var params = {upload: mFile.name};
-				console.log(params);
-				$.post("request.php",params,function(data) {
-					document.getElementsByTagName("body")[0].innerHTML+= data;
-				 });
-			});
-			*/	
-			
-		//	$.get("request.php");
-		</script>
-	</body>
-
+<body>
+  <script src="https://code.jquery.com/jquery-3.1.1.js"> </script>
+  <script> 
+	var pass = prompt("Enter your password:");
+	data = {password: pass}; 
+	$.post("protect.php", data, function(out) {
+		document.getElementsByTagName("body")[0].innerHTML+=out;
+	});
+  </script>
+</body>
 </html>
