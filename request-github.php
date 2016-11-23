@@ -1,6 +1,6 @@
 <?php
 	//phpinfo();
-	if($_POST["key"] != "niwhsa91") exit("<h1>fail</h1>"); 
+	//pass authentication removed for github 
 	echo "<p>PHP file connected...</p>";
 	echo "User: ".get_current_user()." as: ".shell_exec("whoami");
 	echo "<br>";
