@@ -1,6 +1,6 @@
 <?php
 	//phpinfo();
-	if($_POST["key"] != "key") exit("<h1>fail</h1>"); 
+	if($_POST["key"] != "key") exit("<h1>fail</h1>"); //removed for github
 	echo "<p>PHP file connected...</p>";
 	echo "User: ".get_current_user()." as: ".shell_exec("whoami");
 	echo "<br>";
@@ -18,7 +18,7 @@
 		1 => "sudo mkdir './uploads/extracted/$extract_dir'",
                 2 => "sudo unzip '$target_file' -d '/var/www/html/uploads/extracted/$extract_dir'",
 		3 => "sudo ls '/var/www/html/uploads/extracted/$extract_dir' -a", 
-		4 => "sudo /usr/bin/javac '/var/www/html/uploads/extracted/$extract_dir/$main'", 
+		4 => "cd '/var/www/html/uploads/extracted/$extract_dir'; ls -a;  sudo javac $main -d /var/www/html/uploads/extracted/$extract_dir", 
 
          );
 
