@@ -1,6 +1,6 @@
 <?php
 	//phpinfo();
-	//pass authentication removed for github 
+	if($_POST["key"] != "key") exit("<h1>fail</h1>"); 
 	echo "<p>PHP file connected...</p>";
 	echo "User: ".get_current_user()." as: ".shell_exec("whoami");
 	echo "<br>";
@@ -12,12 +12,13 @@
 		echo "<h2> success </h2>";
 	else echo "<h2> fail </h2>";
 	$extract_dir = substr($target_file, strlen($target_dir), -4);
-	 $commands = array(
+	$main = $_POST["mainclass"]; 
+	$commands = array(
 		0 => "ls -a",
-                1 => "cd uploads",
-		2 => "sudo mkdir './extracted/$extract_dir'",
-                3 => "sudo unzip '$target_file' -d '/var/www/html/uploads/extracted/$extract_dir'",
-		4 => "sudo ls 'extracted/$extract_dir' -a", 
+		1 => "sudo mkdir './uploads/extracted/$extract_dir'",
+                2 => "sudo unzip '$target_file' -d '/var/www/html/uploads/extracted/$extract_dir'",
+		3 => "sudo ls '/var/www/html/uploads/extracted/$extract_dir' -a", 
+		4 => "sudo /usr/bin/javac '/var/www/html/uploads/extracted/$extract_dir/$main'", 
 
          );
 
