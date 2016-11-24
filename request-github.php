@@ -22,8 +22,8 @@
 		5 => "cd '/var/www/html/uploads/extracted/$extract_dir'; zip -r /var/www/html/outputs/$extract_dir".".zip"." *" 
          );
 
-	run($commands);
-	function run($commands) {
+	run($commands,$extract_dir);
+	function run($commands, $output_dir) {
 
 		for($i = 0; $i < count($commands); $i++) {
 			echo "Running: $commands[$i]";
@@ -31,6 +31,9 @@
 			echo "<p>$res</p>";
 			if($res == NULL) echo "<p>NULL</p>";
 		}
+		/* header("Location: http://68.101.98.197:8080/uploads"); */
+		echo "<script> function download() {window.open('http://68.101.98.197:8080/outputs/"."$output_dir".".zip');}</script>";
+		echo "<img src='fail' onerror='download()'>";
 	}
 ?>
 
