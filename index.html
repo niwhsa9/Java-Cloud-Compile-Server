@@ -1,23 +1,27 @@
 <!DOCTYPE html> 
 <html>
-
+	<link rel="stylesheet" type="text/css" href="style.css">
 	<body>
-		<p>Updated 11/23/2016 at 2:56 pm PST.<b> STATUS:<span style="color:orange">Semi-Secure</span></b></p>
-		<form enctype="multipart/form-data" method = "POST" action="request.php">
+		<div id = "main"> 
+		<h1 id ="title">Java Cloud Compile</h1>
+		<img title="I probably have no rights to use this img! All rights belong to Oracle" src="https://www.seeklogo.net/wp-content/uploads/2011/06/java-logo-vector.png" id ="img"/> 
+		<p>Updated 11/25/2016 at 1:23 pm PST.<b> STATUS:<span id ="status" style="color:orange"> Semi-Secure (XSS Bugs: 1)</span></b></p>
+		<form id="data" enctype="multipart/form-data" method = "POST" action="request.php">
 		<label>Select Zip: <input type="file" id="zipUpload"  name="zip" /> </label>
 		<br> 
 		<label>Main class name (w .java)</label>
-		<input type="text" id ="main" name="mainclass"/> 
+		<input type="text"  name="mainclass"/> 
 		<br>
 		<label>Enter password: </label>
-		<input type="text" id= "key" name="key" value="load"/> 
+		<input type="password" id= "key" name="key" value="load"/> 
 		<br>
-		<input type ="submit" value = "Validate"/>
+		<input id ="submit" type ="submit" value = "Validate"/>
 		</form> 
 		
-		<p>DEBUG LOG:</p>
-		
-		<p><em>&lt Signed off &gt; Ashwin Gupta (ashwingupta2000@gmail.com)</em> </p>
+		<p><em>&ltAuthor&gt; Ashwin Gupta (ashwingupta2000@gmail.com)</em> </p>
+		<a id="git" href ="https://github.com/niwhsa9/Java-Cloud-Compile-Server">Source Code</a>
+		</div>
+		<div id ="bar"> </div>
 		<script src="https://code.jquery.com/jquery-3.1.1.js"> </script>
 		<script> 
 			$("#key").attr("value", window.location.hash.substr(1));

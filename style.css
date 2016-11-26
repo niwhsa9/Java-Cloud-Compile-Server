@@ -1,0 +1,56 @@
+h1 {	
+	color: black;
+}
+
+.cmd {
+	color: lime; 
+	font-size: 100%; 
+	margin-left: 20vw;
+}
+
+#submit {
+	margin-top: 10px;
+	border:  inset red;	
+	color: red;
+	width: 10vw;
+	height: 3vh;
+}
+
+#main {
+	background-color: #ffffcc;
+	margin: auto;
+	margin-top: 10vh;
+	width: 50%;
+	display: block;
+	text-align: center;
+	padding-bottom: 2vh;
+	border: groove blue;
+	border-radius: 10px;
+}
+body {
+
+	background-color: #7575a3;
+}
+
+#img {
+	width: 10%;
+
+}
+
+#bar {
+
+
+
+}
+
+.shellres {
+	color: white;
+	width: 20vw;
+	margin-left: 20vw;
+}
+
+.breaks {
+	margin-left: 20vw;
+	width: 50vw;
+
+}
