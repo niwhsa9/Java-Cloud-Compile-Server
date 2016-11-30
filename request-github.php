@@ -1,6 +1,6 @@
 <?php
 	//phpinfo();
-	if($_POST["key"] != "key") exit("<h1>fail</h1>"); 
+	
 	echo "<link rel='stylesheet' type='text/css' href='style.css'>";
 	echo "<p>PHP file connected...</p>";
 	echo "User: ".get_current_user()." as: ".shell_exec("whoami");
@@ -19,7 +19,8 @@
                 2 => "sudo unzip '$target_file' -d '$server_dir/uploads/extracted/$extract_dir'",
 		3 => "sudo ls '$server_dir/uploads/extracted/$extract_dir' -a", 
 		4 => "cd '$server_dir/uploads/extracted/$extract_dir'; ls -a;  sudo javac ".escapeshellarg($main)." -d '$server_dir/uploads/extracted/$extract_dir' 2>&1", 
-		5 => "cd '$server_dir/uploads/extracted/$extract_dir'; zip -r $server_dir/outputs/$extract_dir".".zip"." *" 
+		5 => "cd '$server_dir/uploads/extracted/$extract_dir'; zip -r $server_dir/outputs/$extract_dir".".zip"." *" ,
+		6 => "sudo sh autoclear.sh",
          );
 	/*check if inputs are null, dont run run()*/
 	$javacout = "";
